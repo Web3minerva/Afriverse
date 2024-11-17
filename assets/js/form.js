@@ -17,6 +17,14 @@ document.getElementById("partnerForm").addEventListener("submit", function(event
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
+        // Check if all required fields are filled
+    if (!name || !email || !twitter || !telegram || !subject || !message) {
+        alert("Please fill in all fields before submitting.");
+        return; // Stop the form submission if any field is empty
+    }
+
+
+
     // Prepare parameters for EmailJS
     const templateParams = {
         user_name: name,
